@@ -36,7 +36,19 @@ It's hugely inspired by [Hugo](https://github.com/knadh/hugo-ink)'s Ink theme an
 
 
 ## How to start?
-There's not much to know about commands. Just clone this template, and start working from your clone. You have all the common NPM commands at your disposal like `dev`, `build`, etc. Refer [package.json](./package.json) to see a list of all the available commands.
+*Just clone this template*, and start working from your clone. You have all the common NPM commands at your disposal like `dev`, `build`, etc. Refer [package.json](./package.json) to see a list of all the available commands.
+
+**Note:** Use `npx degit one-aalam/astro-ink` to clone the template without any of the `git` history
+
+**Note: This template genrates `server` (SSR ready) output by default. If you want `static` builds**
+  - change `output` to `static` from `server` in [astro.config.js](./astro.config.mjs)
+  - remove `adapter: vercel()`
+  - remove the views counter [API](./src/pages/api/blog/views/[slug].json.ts)
+  - set `USE_VIEW_STATS` to `false` inside [config.ts](./src/config.ts)
+
+**Note: Before running `npm run dev` for the very first time -** 
+- create a `.env` file by running `mv .env.example .env` (if you're on a Linux distro or Mac)
+- set the `SITE_URI` variable as `SITE_URI=http://localhost:4321` (_where 4321 is the port at which your project is running_)
 
 ## Built with Astro Ink
 - [jamesperkins.dev](https://www.jamesperkins.dev/) - Personal site of developer, YouTube instructor [James R Perkins](https://twitter.com/james_r_perkins)
